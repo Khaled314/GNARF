@@ -1,0 +1,15 @@
+#Protect photos
+Listen 80
+    <VirtualHost *:80>
+        DocumentRoot GNARF\picture
+        <Directory "GNARF\picture">
+                AuthName "Authentication Required"
+                AuthType Basic
+                AuthUserFile "C:\Users\khaled\projets_perso\git\GNARF\path\to\htpasswd\file\.htpasswd"
+                Require valid-user
+                AllowOverride All
+                Order allow,deny
+                Allow from all
+                Options Indexes FollowSymLinks MultiViews
+         </Directory>
+    </VirtualHost>
